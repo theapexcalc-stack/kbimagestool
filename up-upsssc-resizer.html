@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UP UPSSSC (PET / Lekhpal) Photo & Signature Resizer</title>
+<link rel="canonical" href="https://kbimagestool.netlify.app/up-upsssc-resizer.html">
+<style>
+:root { --bg: #f8fafc; --surface: #ffffff; --border: #cbd5e1; --text: #0f172a; --muted: #64748b; --primary: #2563eb; --success: #16a34a; --font: system-ui, -apple-system, sans-serif; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+.container { width: 100%; max-width: 860px; margin: 0 auto; padding: 0 16px; }
+.site-header { border-bottom: 1px solid var(--border); background: #fff; padding: 14px 0; }
+.header-inner { display: flex; justify-content: space-between; align-items: center; }
+.brand { font-size: 1.25rem; font-weight: 800; } .brand span { color: var(--primary); }
+.hero { text-align: center; padding: 26px 0 14px; }
+.hero h1 { font-size: 1.75rem; margin-bottom: 6px; font-weight: 800; }
+.hero p { color: var(--muted); font-size: 0.95rem; }
+.tool-card { background: var(--surface); border: 2px solid var(--border); border-radius: 14px; padding: 22px; max-width: 600px; margin: 18px auto 30px; box-shadow: 0 4px 14px rgba(0,0,0,0.04); }
+.drop-zone { border: 2px dashed #60a5fa; border-radius: 12px; padding: 24px 16px; cursor: pointer; text-align: center; background: #eff6ff; transition: 0.2s; margin-bottom: 20px; }
+.drop-zone:hover { border-color: var(--primary); background: #dbeafe; }
+.drop-zone p { font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.drop-zone small { color: var(--muted); font-size: 0.85rem; }
+.size-title { font-size: 0.95rem; font-weight: 800; margin-bottom: 10px; }
+.btn-grid { display: flex; gap: 8px; margin-bottom: 18px; }
+.btn-opt { flex: 1; padding: 11px; background: #f1f5f9; border: 2px solid var(--border); border-radius: 8px; font-weight: 800; cursor: pointer; text-align: center; font-size: 0.9rem; color: var(--text); }
+.btn-opt.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.btn-action { width: 100%; padding: 14px; background: var(--success); color: #fff; border: none; border-radius: 8px; font-size: 1.05rem; font-weight: 800; cursor: pointer; }
+.btn-action:disabled { opacity: 0.5; cursor: not-allowed; }
+.status-msg { margin-top: 14px; text-align: center; font-size: 0.95rem; font-weight: 800; }
+footer { border-top: 1px solid var(--border); padding: 24px 0; text-align: center; color: var(--muted); font-size: 0.85rem; background: #fff; margin-top: 40px; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="brand">KB<span>ImagesTool</span></a>
+    <a href="/" style="color:var(--primary); font-weight:600; font-size:0.9rem;">← All Tools</a>
+  </div>
+</header>
+<main class="container">
+  <div class="hero">
+    <h1>UP UPSSSC (PET / Lekhpal) Resizer</h1>
+    <p>PET, Lekhpal, VDO photo aur signature in strict window range.</p>
+  </div>
+  <div class="tool-card">
+    <div class="drop-zone" onclick="document.getElementById('upsssc-in').click()">
+      <p id="zone-text">📁 Select Photo or Signature</p>
+      <small id="file-info">JPG / PNG allowed</small>
+      <input type="file" id="upsssc-in" accept="image/*" style="display:none">
+    </div>
+    <div class="size-title">UPSSSC Criteria:</div>
+    <div class="btn-grid">
+      <button class="btn-opt active" onclick="setUsType('photo', 50, 350, 450)">Photo (Under 50 KB Window)</button>
+      <button class="btn-opt" onclick="setUsType('signature', 30, 300, 120)">Signature with Name (Under 30 KB Window)</button>
+    </div>
+    <button id="upsssc-dl" class="btn-action" disabled>Download UPSSSC Preset</button>
+    <div id="status" class="status-msg"></div>
+  </div>
+</main>
+<footer><p>© 2026 KB Images Tool • UPSSSC Resizer</p></footer>
+<script>
+let usFile = null, usKB = 50, usW = 350, usH = 450, usPrefix = 'upsssc-photo';
+document.getElementById('upsssc-in').addEventListener('change', e => {
+  if (e.target.files && e.target.files[0]) {
+    usFile = e.target.files[0];
+    document.getElementById('zone-text').textContent = '✅ ' + usFile.name;
+    document.getElementById('file-info').textContent = 'Original: ' + (usFile.size/1024).toFixed(1) + ' KB';
+    document.getElementById('upsssc-dl').disabled = false;
+  }
+});
+function setUsType(t, kb, w, h) {
+  usKB = kb; usW = w; usH = h; usPrefix = 'upsssc-' + t;
+  document.querySelectorAll('.btn-opt').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+document.getElementById('upsssc-dl').addEventListener('click', async () => {
+  if (!usFile) return;
+  const btn = document.getElementById('upsssc-dl');
+  const status = document.getElementById('status');
+  btn.disabled = true;
+  status.style.color = '#2563eb';
+  status.textContent = 'Formatting UPSSSC preset...';
+
+  const img = new Image();
+  img.src = await new Promise(r => { const rd = new FileReader(); rd.onload = ev => r(ev.target.result); rd.readAsDataURL(usFile); });
+  await img.decode();
+
+  const exactTargetBytes = Math.floor(usKB * 1024 * 0.94);
+  let curW = usW, curH = usH, curQ = 0.85, rawBuf = null;
+
+  for (let pass = 0; pass < 20; pass++) {
+    const canvas = document.createElement('canvas');
+    canvas.width = curW; canvas.height = curH;
+    canvas.getContext('2d').drawImage(img, 0, 0, curW, curH);
+    const b = await new Promise(r => canvas.toBlob(r, 'image/jpeg', curQ));
+    const buf = new Uint8Array(await b.arrayBuffer());
+    if (buf.length <= exactTargetBytes) { rawBuf = buf; break; }
+    if (curQ > 0.40) curQ -= 0.15;
+    else { curW = Math.floor(curW * 0.80); curH = Math.floor(curH * 0.80); curQ = 0.70; }
+  }
+
+  if (rawBuf.length < exactTargetBytes) rawBuf = padJpeg(rawBuf, exactTargetBytes);
+
+  const finalBlob = new Blob([rawBuf], { type: 'image/jpeg' });
+  const finalKB = (finalBlob.size / 1024).toFixed(1);
+
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(finalBlob);
+  a.download = `${usPrefix}-${finalKB}kb.jpg`;
+  a.click();
+
+  status.style.color = '#16a34a';
+  status.textContent = `✅ Target Achieved: File ${finalKB} KB bani (Window for ${usKB} KB)`;
+  btn.disabled = false;
+});
+
+function padJpeg(bytes, targetLen) {
+  const pad = targetLen - bytes.length;
+  if (pad < 4) return bytes;
+  const marker = new Uint8Array(pad);
+  marker[0] = 0xFF; marker[1] = 0xFE;
+  marker[2] = (pad >> 8) & 0xFF; marker[3] = pad & 0xFF;
+  const out = new Uint8Array(targetLen);
+  out.set(bytes.subarray(0, 2), 0);
+  out.set(marker, 2);
+  out.set(bytes.subarray(2), 2 + pad);
+  return out;
+}
+</script>
+</body>
+</html>

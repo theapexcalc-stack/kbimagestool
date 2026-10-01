@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DB1L491BKF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DB1L491BKF');
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarkari Exam Photo, Sign & Document Resizer | KBImagesTool</title>
+<meta name="description" content="Sarkari exam forms (SSC, UPSC, IBPS, RPSC, Railway) ke liye photo, signature, left thumb aur handwritten declaration resize karein exact under 20KB, 50KB, 100KB me. 100% safe & private.">
+<link rel="canonical" href="https://kbimagestool.netlify.app/">
+<link rel="icon" type="image/png" href="logo.png">
+
+<style>
+:root {
+  --primary: #0066ff;
+  --primary-hover: #0052cc;
+  --primary-light: #eff6ff;
+  --accent: #10b981;
+  --text-dark: #002244;
+  --text-muted: #64748b;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --radius: 10px;
+  --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font); background: var(--bg); color: var(--text-dark); line-height: 1.45; }
+a { text-decoration: none; color: inherit; }
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+
+/* 1. Header with New Logo */
+.site-header { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; height: 52px; }
+.brand { display: flex; align-items: center; gap: 8px; font-size: 1.25rem; font-weight: 800; color: #002b49; }
+.brand-img { height: 32px; width: auto; object-fit: contain; display: block; }
+.brand span { color: var(--primary); }
+.nav-links { display: flex; gap: 14px; font-size: 0.82rem; font-weight: 600; color: var(--text-muted); }
+.nav-links a:hover { color: var(--primary); }
+@media (max-width: 820px) { .nav-links { display: none; } }
+
+/* Hero */
+.hero { text-align: center; padding: 14px 0 8px; }
+.hero-tag { display: inline-flex; align-items: center; gap: 5px; padding: 2px 10px; border-radius: 999px; background: #ecfdf5; border: 1px solid #a7f3d0; color: #047857; font-size: 0.74rem; font-weight: 700; margin-bottom: 6px; }
+.hero h1 { font-size: clamp(1.25rem, 2.2vw, 1.8rem); font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+.hero p { color: var(--text-muted); font-size: 0.86rem; margin-top: 2px; }
+
+/* Workspace Layout */
+.workspace-grid { display: grid; grid-template-columns: 1.25fr 0.95fr; gap: 16px; margin-top: 10px; }
+@media (max-width: 900px) { .workspace-grid { grid-template-columns: 1fr; } }
+
+.calc-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
+
+/* Dropzone */
+.upload-dropzone { border: 2px dashed #93c5fd; background: var(--primary-light); border-radius: 8px; padding: 16px 12px; text-align: center; cursor: pointer; transition: 0.2s; position: relative; }
+.upload-dropzone:hover { background: #dbeafe; border-color: var(--primary); }
+.upload-dropzone input[type="file"] { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.upload-icon { font-size: 1.6rem; margin-bottom: 2px; }
+.upload-text { font-size: 0.92rem; font-weight: 700; color: #0052cc; }
+.upload-hint { font-size: 0.75rem; color: var(--text-muted); }
+
+/* Controls */
+.controls-layout { margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 500px) { .controls-layout { grid-template-columns: 1fr; } }
+.control-item label { display: block; font-size: 0.78rem; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
+.control-item select, .control-item input { width: 100%; height: 38px; border: 1px solid var(--border); border-radius: 6px; padding: 0 8px; font-size: 0.86rem; font-weight: 600; color: var(--text-dark); background: #fff; }
+.control-item select:focus, .control-item input:focus { outline: none; border-color: var(--primary); }
+
+/* Presets */
+.size-presets-wrap { margin-top: 10px; }
+.size-presets-wrap label { display: block; font-size: 0.78rem; font-weight: 700; color: var(--text-dark); margin-bottom: 5px; }
+.pills-group { display: flex; gap: 6px; flex-wrap: wrap; }
+.preset-btn { flex: 1; min-width: 55px; height: 34px; border: 1px solid var(--border); background: #fff; border-radius: 6px; font-size: 0.82rem; font-weight: 700; cursor: pointer; transition: 0.15s; }
+.preset-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+/* Live Preview */
+.preview-container { margin-top: 12px; padding: 10px; background: #f1f5f9; border-radius: 8px; display: none; }
+.preview-split { display: grid; grid-template-columns: 80px 1fr; gap: 12px; align-items: center; }
+.preview-thumbnail { width: 80px; height: 85px; object-fit: contain; background: #fff; border: 1px solid var(--border); border-radius: 6px; }
+.preview-meta { font-size: 0.8rem; line-height: 1.35; }
+.status-pill { display: inline-block; padding: 1px 6px; border-radius: 999px; background: #dcfce7; color: #15803d; font-size: 0.7rem; font-weight: 700; }
+
+.btn-download { width: 100%; height: 42px; margin-top: 12px; background: var(--accent); color: #fff; border: none; border-radius: 6px; font-size: 0.95rem; font-weight: 800; cursor: pointer; transition: 0.2s; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.btn-download:hover { background: #059669; }
+
+/* Side Panel (Exact Real File Names) */
+.side-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; }
+.side-card h3 { font-size: 0.96rem; font-weight: 800; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; color: var(--primary); }
+.portal-grid-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.portal-tile-btn { display: flex; align-items: center; justify-content: center; text-align: center; padding: 8px 6px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 0.78rem; font-weight: 700; color: #1e293b; transition: 0.15s; min-height: 42px; }
+.portal-tile-btn:hover { border-color: var(--primary); background: var(--primary-light); color: var(--primary); }
+
+/* Structured Directory Sections */
+.section-header { font-size: 1.2rem; font-weight: 800; margin: 30px 0 12px; display: flex; align-items: center; gap: 8px; color: var(--primary); }
+.section-badge { font-size: 0.7rem; background: #fee2e2; color: #dc2626; padding: 2px 6px; border-radius: 4px; font-weight: 800; text-transform: uppercase; }
+
+.tools-grid-pdf { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-bottom: 24px; }
+.tools-grid-exams { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 12px; }
+
+.cat-tile { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px; transition: 0.15s; display: block; }
+.cat-tile:hover { border-color: var(--primary); box-shadow: 0 4px 12px rgba(0,102,255,0.06); transform: translateY(-2px); }
+.cat-tile h4 { font-size: 0.92rem; font-weight: 700; color: var(--text-dark); margin-bottom: 3px; }
+.cat-tile p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.35; }
+
+/* FAQ */
+.faq-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; margin-top: 30px; }
+.faq-box h3 { font-size: 1rem; font-weight: 800; margin-bottom: 10px; color: var(--primary); }
+.faq-item { margin-bottom: 10px; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px; }
+.faq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.faq-q { font-weight: 700; font-size: 0.85rem; color: #1e293b; }
+.faq-a { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+
+/* Footer */
+.site-footer { margin-top: 36px; padding: 20px 0; border-top: 1px solid var(--border); text-align: center; font-size: 0.82rem; color: var(--text-muted); }
+.footer-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
+.footer-links a:hover { color: var(--primary); }
+</style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img src="logo.png" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 40 40\'%3E%3Crect width=\'40\' height=\'40\' rx=\'8\' fill=\'%230066ff\'/%3E%3Ctext x=\'50%25\' y=\'65%25\' font-size=\'20\' font-weight=\'bold\' fill=\'%23fff\' text-anchor=\'middle\'%3EKB%3C/text%3E%3C/svg%3E';" alt="KBImagesTool Logo" class="brand-img">
+      KBImages<span>Tool</span>
+    </a>
+    <nav class="nav-links">
+      <a href="image-to-pdf.html">Image to PDF</a>
+      <a href="combine-images-to-pdf.html">Images to PDF</a>
+      <a href="compress-pdf.html">Compress PDF</a>
+      <a href="merge-pdfs.html">Merge PDFs</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="hero-tag">🔒 100% Free & Private — Offline In-Browser Processing</div>
+    <h1>Sarkari Exam Photo, Sign & Document Resizer</h1>
+    <p>SSC, UPSC, IBPS, Police, RPSC aur Railway forms ke exact KB & Dimension criteria ke mutabiq resize karein.</p>
+  </section>
+
+  <div class="workspace-grid">
+    <!-- Left Main Compressor Card -->
+    <div class="calc-card">
+      <div class="upload-dropzone">
+        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/jpg">
+        <div class="upload-icon">📁</div>
+        <div class="upload-text">Select Photo, Signature, Thumb or Document</div>
+        <div class="upload-hint">JPG, JPEG, PNG allowed • File select karein</div>
+      </div>
+
+      <div class="controls-layout">
+        <div class="control-item">
+          <label>Target Dimensions / Crop Preset</label>
+          <select id="presetDimension" onchange="syncHomepagePreset()">
+            <option value="passport" selected>📷 Standard Photo (3.5 × 4.5 cm / 200×230 px)</option>
+            <option value="signature">✍️️ Signature (140 × 60 px / 10-20 KB)</option>
+            <option value="thumb">👍 Left Thumb Impression (240 × 240 px / 20-50 KB)</option>
+            <option value="declaration">📝 Handwritten Declaration (800 × 400 px / 50-100 KB)</option>
+            <option value="square">Square Format (300 × 300 px)</option>
+            <option value="doc">A4 Document Ratio (Scan Standard)</option>
+            <option value="custom">Custom (Keep Original Aspect Ratio)</option>
+          </select>
+        </div>
+
+        <div class="control-item">
+          <label>Target File Size (KB)</label>
+          <input type="number" id="targetKbInput" value="50" min="5" max="5000">
+        </div>
+      </div>
+
+      <div class="size-presets-wrap">
+        <label>Quick KB Select:</label>
+        <div class="pills-group">
+          <button type="button" class="preset-btn" onclick="setTargetSize(20, this)">20 KB</button>
+          <button type="button" class="preset-btn active" onclick="setTargetSize(50, this)">50 KB</button>
+          <button type="button" class="preset-btn" onclick="setTargetSize(100, this)">100 KB</button>
+          <button type="button" class="preset-btn" onclick="setTargetSize(200, this)">200 KB</button>
+          <button type="button" class="preset-btn" onclick="setTargetSize(500, this)">500 KB</button>
+        </div>
+      </div>
+
+      <!-- Live Preview Area -->
+      <div id="previewCard" class="preview-container">
+        <div class="preview-split">
+          <img id="previewImg" class="preview-thumbnail" alt="Resized Preview">
+          <div class="preview-meta">
+            <div><strong>Original:</strong> <span id="metaOrig">0 KB</span></div>
+            <div><strong>Compressed:</strong> <span id="metaComp" style="color:var(--accent); font-weight:800;">0 KB</span></div>
+            <div><strong>Dimensions:</strong> <span id="metaRes">0 × 0 px</span></div>
+            <div style="margin-top:3px;"><span class="status-pill" id="metaBadge">Ready for Sarkari Portal Upload</span></div>
+          </div>
+        </div>
+      </div>
+
+      <button id="downloadBtn" class="btn-download" onclick="downloadOptimizedImage()">
+        ⚡ Download Target 50 KB Image
+      </button>
+    </div>
+
+    <!-- Right Side Panel: EXACT File Names in Local Folder -->
+    <div class="side-card">
+      <h3>🏛 Dedicated Exam Portals</h3>
+      <div class="portal-grid-pair">
+        <a href="ssc-photo-resizer.html" class="portal-tile-btn">SSC Photo Resizer</a>
+        <a href="upsc-photo-resizer.html" class="portal-tile-btn">UPSC Photo Resizer</a>
+        <a href="railway-rrb-photo-resizer.html" class="portal-tile-btn">Railways & RRB</a>
+        <a href="bank-ibps-sbi-resizer.html" class="portal-tile-btn">Banking Jobs (IBPS)</a>
+        <a href="police-defense-photo-resizer.html" class="portal-tile-btn">Police & Defense</a>
+        <a href="rajasthan-rpsc-resizer.html" class="portal-tile-btn">Rajasthan RPSC</a>
+        <a href="rajasthan-rsmssb-resizer.html" class="portal-tile-btn">Rajasthan RSMSSB</a>
+        <a href="up-uppsc-resizer.html" class="portal-tile-btn">UP UPPSC Exam</a>
+        <a href="up-upsssc-resizer.html" class="portal-tile-btn">UP UPSSSC (PET)</a>
+        <a href="police-photo-resizer.html" class="portal-tile-btn">State Police Bharti</a>
+        <a href="compress-image-to-50kb.html" class="portal-tile-btn">Compress to 50 KB</a>
+        <a href="compress-image-to-100kb.html" class="portal-tile-btn">Compress to 100 KB</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section A: Document PDF Tools (Folder Matched) -->
+  <h2 class="section-header">
+    📑 Document PDF Tools <span class="section-badge">Most Wanted</span>
+  </h2>
+  <div class="tools-grid-pdf">
+    <a href="image-to-pdf.html" class="cat-tile">
+      <h4>Image to PDF</h4>
+      <p>Aadhaar, Marksheet ya Photo ko target 100KB, 300KB, 500KB PDF me convert karein.</p>
+    </a>
+    <a href="combine-images-to-pdf.html" class="cat-tile">
+      <h4>Images to Combined PDF</h4>
+      <p>Multiple documents (Marksheet + Certificate) ko jodkar ek single PDF banayein.</p>
+    </a>
+    <a href="compress-pdf.html" class="cat-tile">
+      <h4>Compress PDF Size</h4>
+      <p>Badi scanned PDF ka size kam karke 100KB ya 300KB me download karein.</p>
+    </a>
+    <a href="merge-pdfs.html" class="cat-tile">
+      <h4>Merge PDF Files</h4>
+      <p>Do ya do se zyada alag-alag PDF documents ko aapas me ek sath jodein.</p>
+    </a>
+  </div>
+
+  <!-- Section B: All India Exam Portals (Folder Matched) -->
+  <h2 class="section-header">
+    🏛️ All India Exam Photo & Signature Portals
+  </h2>
+  <div class="tools-grid-exams">
+    <a href="ssc-photo-resizer.html" class="cat-tile">
+      <h4>SSC Photo Resizer</h4>
+      <p>CGL, CHSL, MTS aur GD Constable ke official criteria.</p>
+    </a>
+    <a href="upsc-photo-resizer.html" class="cat-tile">
+      <h4>UPSC Photo Resizer</h4>
+      <p>Civil Services, OTR portal aspect ratio aur file sizes.</p>
+    </a>
+    <a href="railway-rrb-photo-resizer.html" class="cat-tile">
+      <h4>Railways & RRB Resizer</h4>
+      <p>RRB NTPC, Group D aur ALP ke official guidelines.</p>
+    </a>
+    <a href="bank-ibps-sbi-resizer.html" class="cat-tile">
+      <h4>Banking Jobs (IBPS / SBI)</h4>
+      <p>PO, Clerk, Thumb Impression aur Declaration official presets.</p>
+    </a>
+    <a href="police-defense-photo-resizer.html" class="cat-tile">
+      <h4>Police & Defense Jobs</h4>
+      <p>State Police, Army, Agniveer aur Paramilitary photo format.</p>
+    </a>
+    <a href="rajasthan-rpsc-resizer.html" class="cat-tile">
+      <h4>Rajasthan RPSC Jobs</h4>
+      <p>RAS aur Lecturer OTR portal auto-dimension conversion.</p>
+    </a>
+    <a href="rajasthan-rsmssb-resizer.html" class="cat-tile">
+      <h4>Rajasthan RSSB / RSMSSB</h4>
+      <p>CET, Patwari aur LDC direct photo, thumb & sign sizing.</p>
+    </a>
+    <a href="up-uppsc-resizer.html" class="cat-tile">
+      <h4>UP UPPSC Exam Resizer</h4>
+      <p>Combined State PCS aur RO/ARO auto image dimension tool.</p>
+    </a>
+    <a href="up-upsssc-resizer.html" class="cat-tile">
+      <h4>UP UPSSSC (PET / VDO)</h4>
+      <p>PET aur Lekhpal ke liye sign with Hindi name criteria.</p>
+    </a>
+    <a href="police-photo-resizer.html" class="cat-tile">
+      <h4>State Police Photo Resizer</h4>
+      <p>State Police Bharti applications ke liye dedicated photo compression.</p>
+    </a>
+    <a href="compress-image-to-50kb.html" class="cat-tile">
+      <h4>Compress Image to 50 KB</h4>
+      <p>Sarkari forms ke passport photo standard 50KB size.</p>
+    </a>
+    <a href="compress-image-to-100kb.html" class="cat-tile">
+      <h4>Compress Image to 100 KB</h4>
+      <p>Marksheet, Domicile aur Certificate size fixer under 100KB.</p>
+    </a>
+  </div>
+
+  <!-- FAQ Section -->
+  <section class="faq-box">
+    <h3>Frequently Asked Questions (Sawal aur Jawab)</h3>
+    <div class="faq-item">
+      <div class="faq-q">Q1: Kya meri photo ya signature kisi server par save hoti hai?</div>
+      <div class="faq-a">Nahin. Ye tool 100% client-side HTML5 canvas par run hota hai. Aapka document aapke phone ya computer me hi process hota hai.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q2: Resize karne ke baad photo blur toh nahi hogi?</div>
+      <div class="faq-a">Nahi. Hum adaptive downscaling use karte hain jisse aspect ratio aur clear sharpness bani rehti hai.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q3: Sarkari exam me signature aur thumb ka standard size kya hota hai?</div>
+      <div class="faq-a">Zyadatar exams (jaise SSC, RRB, UPSSSC, Rajasthan SSO) me signature ka size 10-20 KB ya 20-50 KB aur thumb impression 20-50 KB manga jata hai.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 KBImagesTool. Built for high-speed client-side document processing.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="image-to-pdf.html">Image to PDF</a>
+      <a href="combine-images-to-pdf.html">Images to PDF</a>
+      <a href="compress-pdf.html">Compress PDF</a>
+      <a href="merge-pdfs.html">Merge PDFs</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+let currentFile = null;
+let processedBlob = null;
+
+function syncHomepagePreset() {
+  const p = document.getElementById('presetDimension').value;
+  if (p === 'signature') {
+    setTargetSize(20, document.querySelectorAll('.preset-btn')[0]);
+  } else if (p === 'passport' || p === 'thumb') {
+    setTargetSize(50, document.querySelectorAll('.preset-btn')[1]);
+  } else if (p === 'declaration') {
+    setTargetSize(100, document.querySelectorAll('.preset-btn')[2]);
+  } else {
+    processImage();
+  }
+}
+
+function setTargetSize(kb, btn) {
+  document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  document.getElementById('targetKbInput').value = kb;
+  document.getElementById('downloadBtn').innerText = `⚡ Download Target ${kb} KB Image`;
+  if (currentFile) processImage();
+}
+
+document.getElementById('fileInput').addEventListener('change', function(e) {
+  if (e.target.files && e.target.files[0]) {
+    currentFile = e.target.files[0];
+    document.getElementById('metaOrig').innerText = (currentFile.size / 1024).toFixed(1) + ' KB';
+    processImage();
+  }
+});
+
+document.getElementById('targetKbInput').addEventListener('input', function() {
+  const val = this.value;
+  document.getElementById('downloadBtn').innerText = `⚡ Download Target ${val || 50} KB Image`;
+  if (currentFile) processImage();
+});
+
+function canvasToBlobPromise(canvas, quality) {
+  return new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', quality));
+}
+
+// STRICT CEILING COMPRESSION ENGINE
+async function processImage() {
+  if (!currentFile) return;
+
+  const targetKb = Math.max(5, parseFloat(document.getElementById('targetKbInput').value) || 50);
+  const maxAllowedBytes = targetKb * 1024 * 0.97;
+  const minAllowedBytes = targetKb * 1024 * 0.85;
+  const preset = document.getElementById('presetDimension').value;
+
+  const reader = new FileReader();
+  reader.onload = function(event) {
+    const img = new Image();
+    img.onload = async function() {
+      let targetW = img.width;
+      let targetH = img.height;
+
+      if (preset === 'passport') {
+        targetW = 350; targetH = 450;
+      } else if (preset === 'signature') {
+        targetW = 280; targetH = 120;
+      } else if (preset === 'thumb') {
+        targetW = 240; targetH = 240;
+      } else if (preset === 'declaration') {
+        targetW = 800; targetH = 400;
+      } else if (preset === 'square') {
+        targetW = 400; targetH = 400;
+      } else if (preset === 'doc') {
+        targetW = 700; targetH = 990;
+      }
+
+      let canvas = document.createElement('canvas');
+      canvas.width = targetW;
+      canvas.height = targetH;
+      let ctx = canvas.getContext('2d');
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, targetW, targetH);
+      ctx.drawImage(img, 0, 0, targetW, targetH);
+
+      let low = 0.05;
+      let high = 0.98;
+      let bestBlob = null;
+
+      for (let i = 0; i < 10; i++) {
+        let mid = (low + high) / 2;
+        let blob = await canvasToBlobPromise(canvas, mid);
+        if (!blob) break;
+
+        if (blob.size <= maxAllowedBytes) {
+          bestBlob = blob;
+          low = mid;
+        } else {
+          high = mid;
+        }
+      }
+
+      if (!bestBlob || bestBlob.size > maxAllowedBytes) {
+        let scale = 0.9;
+        while (scale >= 0.3) {
+          let scaledCanvas = document.createElement('canvas');
+          scaledCanvas.width = Math.round(targetW * scale);
+          scaledCanvas.height = Math.round(targetH * scale);
+          let sCtx = scaledCanvas.getContext('2d');
+          sCtx.fillStyle = "#ffffff";
+          sCtx.fillRect(0, 0, scaledCanvas.width, scaledCanvas.height);
+          sCtx.drawImage(img, 0, 0, scaledCanvas.width, scaledCanvas.height);
+
+          let scaledBlob = await canvasToBlobPromise(scaledCanvas, 0.7);
+          if (scaledBlob && scaledBlob.size <= maxAllowedBytes) {
+            bestBlob = scaledBlob;
+            canvas = scaledCanvas;
+            break;
+          }
+          scale -= 0.1;
+        }
+      }
+
+      if (bestBlob && bestBlob.size < minAllowedBytes) {
+        const paddingNeeded = Math.floor(maxAllowedBytes - bestBlob.size - 20);
+        if (paddingNeeded > 32) {
+          const ab = await bestBlob.arrayBuffer();
+          const uint8 = new Uint8Array(ab);
+
+          const padLen = Math.min(65530, paddingNeeded);
+          const padSeg = new Uint8Array(padLen);
+          padSeg[0] = 0xFF;
+          padSeg[1] = 0xED;
+          padSeg[2] = (padLen - 2) >> 8;
+          padSeg[3] = (padLen - 2) & 0xFF;
+          for (let p = 4; p < padLen; p++) padSeg[p] = 0x20;
+
+          const merged = new Uint8Array(uint8.length + padLen);
+          merged.set(uint8.subarray(0, 2), 0);
+          merged.set(padSeg, 2);
+          merged.set(uint8.subarray(2), 2 + padLen);
+
+          bestBlob = new Blob([merged], { type: 'image/jpeg' });
+        }
+      }
+
+      finalize(bestBlob, canvas.width, canvas.height);
+    };
+    img.src = event.target.result;
+  };
+  reader.readAsDataURL(currentFile);
+}
+
+function finalize(blob, w, h) {
+  processedBlob = blob;
+  const url = URL.createObjectURL(blob);
+  document.getElementById('previewImg').src = url;
+  
+  const finalKb = (blob.size / 1024).toFixed(1);
+  document.getElementById('metaComp').innerText = finalKb + ' KB';
+  document.getElementById('metaRes').innerText = `${w} × ${h} px`;
+  document.getElementById('previewCard').style.display = 'block';
+  document.getElementById('downloadBtn').innerText = `⚡ Download Target ${finalKb} KB Image`;
+}
+
+function downloadOptimizedImage() {
+  if (!processedBlob) {
+    alert("Kripya pehle photo select karein.");
+    return;
+  }
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(processedBlob);
+  a.download = `Sarkari_Optimized_${document.getElementById('targetKbInput').value}KB.jpg`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+</script>
+</body>
+</html>
