@@ -14,7 +14,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sarkari Exam Photo, Sign & Document Resizer | KBImagesTool</title>
-<meta name="description" content="Sarkari exam forms (SSC, UPSC, IBPS, RPSC, Railway) ke liye photo, signature, left thumb aur handwritten declaration resize karein exact under 20KB, 50KB, 100KB me. 100% safe & private.">
+<meta name="description" content="Sarkari exam forms (SSC, UPSC, IBPS, RPSC, Railway) ke liye photo, signature, left thumb aur documents resize karein exact under 20KB, 50KB, 100KB me. 100% safe & private.">
 <link rel="canonical" href="https://kbimagestool.netlify.app/">
 <link rel="icon" type="image/png" href="logo.png">
 
@@ -38,7 +38,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text-dark);
 a { text-decoration: none; color: inherit; }
 .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 16px; }
 
-/* 1. Header with New Logo */
+/* Header */
 .site-header { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 52px; }
 .brand { display: flex; align-items: center; gap: 8px; font-size: 1.25rem; font-weight: 800; color: #002b49; }
@@ -92,7 +92,7 @@ a { text-decoration: none; color: inherit; }
 .btn-download { width: 100%; height: 42px; margin-top: 12px; background: var(--accent); color: #fff; border: none; border-radius: 6px; font-size: 0.95rem; font-weight: 800; cursor: pointer; transition: 0.2s; display: flex; align-items: center; justify-content: center; gap: 6px; }
 .btn-download:hover { background: #059669; }
 
-/* Side Panel (Exact Real File Names) */
+/* Side Panel */
 .side-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; }
 .side-card h3 { font-size: 0.96rem; font-weight: 800; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; color: var(--primary); }
 .portal-grid-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
@@ -135,9 +135,9 @@ a { text-decoration: none; color: inherit; }
     </a>
     <nav class="nav-links">
       <a href="image-to-pdf.html">Image to PDF</a>
-      <a href="combine-images-to-pdf.html">Images to PDF</a>
+      <a href="images-to-combined-pdf.html">Images to PDF</a>
       <a href="compress-pdf.html">Compress PDF</a>
-      <a href="merge-pdfs.html">Merge PDFs</a>
+      <a href="merge-pdf.html">Merge PDFs</a>
       <a href="contact.html">Contact</a>
     </nav>
   </div>
@@ -151,7 +151,7 @@ a { text-decoration: none; color: inherit; }
   </section>
 
   <div class="workspace-grid">
-    <!-- Left Main Compressor Card -->
+    <!-- Main Compressor Card -->
     <div class="calc-card">
       <div class="upload-dropzone">
         <input type="file" id="fileInput" accept="image/jpeg,image/png,image/jpg">
@@ -165,7 +165,7 @@ a { text-decoration: none; color: inherit; }
           <label>Target Dimensions / Crop Preset</label>
           <select id="presetDimension" onchange="syncHomepagePreset()">
             <option value="passport" selected>📷 Standard Photo (3.5 × 4.5 cm / 200×230 px)</option>
-            <option value="signature">✍️️ Signature (140 × 60 px / 10-20 KB)</option>
+            <option value="signature">✍ Signature (140 × 60 px / 10-20 KB)</option>
             <option value="thumb">👍 Left Thumb Impression (240 × 240 px / 20-50 KB)</option>
             <option value="declaration">📝 Handwritten Declaration (800 × 400 px / 50-100 KB)</option>
             <option value="square">Square Format (300 × 300 px)</option>
@@ -209,7 +209,7 @@ a { text-decoration: none; color: inherit; }
       </button>
     </div>
 
-    <!-- Right Side Panel: EXACT File Names in Local Folder -->
+    <!-- Right Side Panel: EXACT File Names matched to your folder -->
     <div class="side-card">
       <h3>🏛 Dedicated Exam Portals</h3>
       <div class="portal-grid-pair">
@@ -229,7 +229,7 @@ a { text-decoration: none; color: inherit; }
     </div>
   </div>
 
-  <!-- Section A: Document PDF Tools (Folder Matched) -->
+  <!-- Section A: Document PDF Tools (EXACT Names Matched) -->
   <h2 class="section-header">
     📑 Document PDF Tools <span class="section-badge">Most Wanted</span>
   </h2>
@@ -238,7 +238,7 @@ a { text-decoration: none; color: inherit; }
       <h4>Image to PDF</h4>
       <p>Aadhaar, Marksheet ya Photo ko target 100KB, 300KB, 500KB PDF me convert karein.</p>
     </a>
-    <a href="combine-images-to-pdf.html" class="cat-tile">
+    <a href="images-to-combined-pdf.html" class="cat-tile">
       <h4>Images to Combined PDF</h4>
       <p>Multiple documents (Marksheet + Certificate) ko jodkar ek single PDF banayein.</p>
     </a>
@@ -246,13 +246,13 @@ a { text-decoration: none; color: inherit; }
       <h4>Compress PDF Size</h4>
       <p>Badi scanned PDF ka size kam karke 100KB ya 300KB me download karein.</p>
     </a>
-    <a href="merge-pdfs.html" class="cat-tile">
+    <a href="merge-pdf.html" class="cat-tile">
       <h4>Merge PDF Files</h4>
       <p>Do ya do se zyada alag-alag PDF documents ko aapas me ek sath jodein.</p>
     </a>
   </div>
 
-  <!-- Section B: All India Exam Portals (Folder Matched) -->
+  <!-- Section B: All India Exam Portals (EXACT Names Matched) -->
   <h2 class="section-header">
     🏛️ All India Exam Photo & Signature Portals
   </h2>
@@ -331,9 +331,9 @@ a { text-decoration: none; color: inherit; }
     <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="image-to-pdf.html">Image to PDF</a>
-      <a href="combine-images-to-pdf.html">Images to PDF</a>
+      <a href="images-to-combined-pdf.html">Images to PDF</a>
       <a href="compress-pdf.html">Compress PDF</a>
-      <a href="merge-pdfs.html">Merge PDFs</a>
+      <a href="merge-pdf.html">Merge PDFs</a>
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="terms.html">Terms</a>
       <a href="contact.html">Contact</a>
