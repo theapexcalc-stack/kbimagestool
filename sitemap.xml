@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Hub -->
+  <url><loc>https://kbimagetool.in/</loc><priority>1.0</priority></url>
+
+  <!-- PDF Tools (4 Core) -->
+  <url><loc>https://kbimagetool.in/image-to-pdf.html</loc><priority>0.9</priority></url>
+  <url><loc>https://kbimagetool.in/images-to-combined-pdf.html</loc><priority>0.9</priority></url>
+  <url><loc>https://kbimagetool.in/compress-pdf.html</loc><priority>0.9</priority></url>
+  <url><loc>https://kbimagetool.in/merge-pdf.html</loc><priority>0.9</priority></url>
+
+  <!-- Exam & Size Resizer Tools -->
+  <url><loc>https://kbimagetool.in/ssc-photo-resizer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://kbimagetool.in/upsc-photo-resizer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://kbimagetool.in/railway-rrb-photo-resizer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://kbimagetool.in/bank-ibps-sbi-resizer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://kbimagetool.in/police-defense-photo-resizer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://kbimagetool.in/police-photo-resizer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://kbimagetool.in/rajasthan-rpsc-resizer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://kbimagetool.in/rajasthan-rsmssb-resizer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://kbimagetool.in/up-uppsc-resizer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://kbimagetool.in/up-upsssc-resizer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://kbimagetool.in/compress-image-to-50kb.html</loc><priority>0.8</priority></url>
+  <url><loc>https://kbimagetool.in/compress-image-to-100kb.html</loc><priority>0.8</priority></url>
+
+  <!-- Static & Legal Pages -->
+  <url><loc>https://kbimagetool.in/about.html</loc><priority>0.5</priority></url>
+  <url><loc>https://kbimagetool.in/disclaimer.html</loc><priority>0.5</priority></url>
+  <url><loc>https://kbimagetool.in/privacy-policy.html</loc><priority>0.5</priority></url>
+  <url><loc>https://kbimagetool.in/terms.html</loc><priority>0.5</priority></url>
+  <url><loc>https://kbimagetool.in/contact.html</loc><priority>0.5</priority></url>
+</urlset>
