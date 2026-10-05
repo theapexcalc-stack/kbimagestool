@@ -1,0 +1,7 @@
+[context.production.environment]
+  NETLIFY_FEEDBACK_DISABLED = "true"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "frame-src 'self' https://challenges.cloudflare.com;"
