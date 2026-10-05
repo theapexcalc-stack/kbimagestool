@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://kbimagestool.netlify.app/sitemap.xml
