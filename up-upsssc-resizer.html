@@ -13,9 +13,9 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>UPPSC Photo & Signature Resizer Online (20KB - 50KB) | KBImageTool</title>
-<meta name="description" content="Online image resizer for Uttar Pradesh Public Service Commission (UPPSC PCS, RO/ARO, Staff Nurse, OTR portal). Resize photo (20-50KB) and signature (10-20KB).">
-<link rel="canonical" href="https://kbimagetool.in/up-uppsc-resizer.html">
+<title>UPSSSC Photo & Signature Resizer Online (PET, Lekhpal, VDO) | KBImageTool</title>
+<meta name="description" content="Online image resizer for Uttar Pradesh Subordinate Services Selection Commission (UPSSSC PET, Lekhpal, VDO, Junior Assistant). Resize photo (upto 50KB) and signature (upto 30KB).">
+<link rel="canonical" href="https://kbimagetool.in/up-upsssc-resizer.html">
 <link rel="icon" type="image/png" href="logo.png">
 
 <style>
@@ -124,124 +124,124 @@ a { text-decoration: none; color: inherit; }
 
 <main class="container tool-wrap">
   <div class="page-head">
-    <h1>UPPSC Photo & Signature Resizer Online</h1>
-    <p>UPPSC Combined State Upper Subordinate (PCS), RO/ARO, aur OTR registration forms ke liye exact dimension & KB resizer.</p>
+    <h1>UPSSSC Photo & Signature Resizer Online</h1>
+    <p>UPSSSC Preliminary Eligibility Test (PET), Lekhpal, VDO, aur UP subordinate online application forms ke liye exact dimension & KB resizer.</p>
   </div>
 
   <div class="calc-card">
     <div class="upload-dropzone">
       <input type="file" id="fileInput" accept="image/jpeg,image/png,image/jpg">
       <div class="upload-icon">📁</div>
-      <div class="upload-text">Select UPPSC Photo or Signature</div>
-      <div class="upload-hint">JPG / JPEG format • Instant in-browser scaling</div>
+      <div class="upload-text">Select UPSSSC Photo or Signature</div>
+      <div class="upload-hint">JPG / JPEG format • Fast in-browser resizing</div>
     </div>
 
     <div class="controls-layout">
       <div class="control-item">
-        <label>UPPSC Document Preset</label>
-        <select id="presetDimension" onchange="syncUppscPreset()">
-          <option value="uppsc_photo" selected>📷 UPPSC Candidate Photo (3.5 × 4.5 cm / 20-50 KB)</option>
-          <option value="uppsc_sign">✍ UPPSC Candidate Signature (3.5 × 1.5 cm / 10-20 KB)</option>
+        <label>UPSSSC Document Preset</label>
+        <select id="presetDimension" onchange="syncUpssscPreset()">
+          <option value="upsssc_photo" selected>📷 UPSSSC Candidate Photo (3.5 × 4.5 cm / Max 50 KB)</option>
+          <option value="upsssc_sign">✍ UPSSSC Candidate Signature (3.5 × 1.5 cm / Max 30 KB)</option>
           <option value="custom">⚙ Custom (Keep Aspect Ratio)</option>
         </select>
       </div>
 
       <div class="control-item">
         <label>Target File Size Limit (KB)</label>
-        <input type="number" id="targetKbInput" value="50" min="10" max="100">
+        <input type="number" id="targetKbInput" value="50" min="5" max="100">
       </div>
     </div>
 
     <div class="size-presets-wrap">
-      <label>Quick UPPSC Target Size:</label>
+      <label>Quick UPSSSC Target Size:</label>
       <div class="pills-group">
-        <button type="button" class="preset-btn" onclick="setTargetSize(20, this)">20 KB (Sign Max)</button>
+        <button type="button" class="preset-btn" onclick="setTargetSize(30, this)">30 KB (Sign Max)</button>
         <button type="button" class="preset-btn active" onclick="setTargetSize(50, this)">50 KB (Photo Max)</button>
-        <button type="button" class="preset-btn" onclick="setTargetSize(100, this)">100 KB</button>
+        <button type="button" class="preset-btn" onclick="setTargetSize(20, this)">20 KB</button>
       </div>
     </div>
 
     <div id="previewCard" class="preview-container">
       <div class="preview-split">
-        <img id="previewImg" class="preview-thumbnail" alt="UPPSC Asset Preview">
+        <img id="previewImg" class="preview-thumbnail" alt="UPSSSC Asset Preview">
         <div class="preview-meta">
           <div><strong>Original File:</strong> <span id="metaOrig">0 KB</span></div>
-          <div><strong>UPPSC Optimized Size:</strong> <span id="metaComp" style="color:var(--accent); font-weight:800;">0 KB</span></div>
+          <div><strong>UPSSSC Optimized Size:</strong> <span id="metaComp" style="color:var(--accent); font-weight:800;">0 KB</span></div>
           <div><strong>Dimensions:</strong> <span id="metaRes">0 × 0 px</span></div>
-          <div style="margin-top:3px;"><span class="status-pill" id="metaBadge">Verified: Ready for UPPSC OTR Portal</span></div>
+          <div style="margin-top:3px;"><span class="status-pill" id="metaBadge">Verified: Ready for UPSSSC Portal</span></div>
         </div>
       </div>
     </div>
 
     <button id="downloadBtn" class="btn-download" onclick="downloadOptimizedImage()">
-      ⚡ Download UPPSC Compliant File
+      ⚡ Download UPSSSC Compliant File
     </button>
   </div>
 
   <section class="seo-section">
-    <h2>Official Uttar Pradesh Public Service Commission (UPPSC) Image Guidelines</h2>
+    <h2>Official Uttar Pradesh Subordinate Services Selection Commission (UPSSSC) Guidelines</h2>
     <p>
-      The Uttar Pradesh Public Service Commission (Prayagraj) conducts prestigious competitive examinations across UP including the Combined State / Upper Subordinate Services (PCS), Review Officer / Assistant Review Officer (RO/ARO), Medical Officer, and Lecturer posts. All applicants must submit their profile and documents through the UPPSC One-Time Registration (OTR) module on uppsc.up.nic.in.
+      The Uttar Pradesh Subordinate Services Selection Commission (UPSSSC, Lucknow) conducts key competitive tests including the Preliminary Eligibility Test (PET), Rajasva Lekhpal, Gram Panchayat Adhikari (VDO), Junior Assistant, and forest guard recruitments. Uploading proper passport-size photos and signatures matching the exact portal parameters on upsssc.gov.in is mandatory to prevent form rejection.
     </p>
     <p>
-      For full access to pan-India recruitment portal tools and multi-file document mergers, visit the main <a href="https://kbimagetool.in/" style="color:var(--primary); font-weight:700;">KBImageTool Home</a> portal.
+      For additional exam formats and multi-image conversion tools, visit our complete suite on the <a href="https://kbimagetool.in/" style="color:var(--primary); font-weight:700;">KBImageTool Home</a> portal.
     </p>
 
     <table>
       <thead>
         <tr>
-          <th>Document</th>
-          <th>Size Allowed</th>
+          <th>Document Type</th>
+          <th>Max Size Allowed</th>
           <th>Physical Dimension</th>
-          <th>Pixel Bounds</th>
+          <th>Resolution</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>Passport Photo</td>
-          <td>20 KB to 50 KB</td>
+          <td>Under 50 KB</td>
           <td>3.5 cm × 4.5 cm</td>
           <td>Approx. 200 × 230 pixels</td>
         </tr>
         <tr>
           <td>Candidate Signature</td>
-          <td>10 KB to 20 KB</td>
+          <td>Under 30 KB</td>
           <td>3.5 cm × 1.5 cm</td>
           <td>Approx. 140 × 60 pixels</td>
         </tr>
       </tbody>
     </table>
 
-    <h3>Rules for UPPSC Candidate Photographs</h3>
+    <h3>Guidelines for UPSSSC Candidate Photographs</h3>
     <p>
-      The photograph must be recent and captured against a white or very light grey background. Candidates must face the camera directly with both ears visible and eyes open. Hats, caps, dark sunglasses, and tinted spectacles are strictly forbidden. The image must be clear, without blur or pixelation.
+      The photograph must be recent (taken within the last 6 months) against a white or neutral light grey background. Both ears and eyes must be clearly visible with a neutral facial expression. Caps, hats, masks, and dark tinted glasses are not permitted.
     </p>
 
-    <h3>Rules for UPPSC Candidate Signatures</h3>
+    <h3>Special Guidelines for UPSSSC Candidate Signatures</h3>
     <p>
-      The signature must be written in running handwriting using a black ballpoint pen on clean, white paper. Signatures penned entirely in capital letters are treated as invalid and will lead to application cancellation. The signature box should be cleanly cropped without dark shadows or phone background borders.
+      UPSSSC requires the candidate to write their full name in Hindi directly below their English running-hand signature inside the same box, or sign clearly using a black/blue ink pen on unruled white paper. Avoid taking photos in dim lighting to prevent background shadows.
     </p>
 
-    <h3>Step-by-Step Instructions for UPPSC Form Resizing</h3>
+    <h3>Step-by-Step Instructions for Resizing</h3>
     <ol>
-      <li><strong>Select Scanned Asset:</strong> Click on the upload dropzone to choose your candidate photo or signature file.</li>
-      <li><strong>Pick UPPSC Preset:</strong> Select either Candidate Photo (20-50 KB) or Candidate Signature (10-20 KB) from the dropdown options.</li>
-      <li><strong>Download Clean File:</strong> Check the preview and file size, then click <em>Download UPPSC Compliant File</em> for error-free submission.</li>
+      <li><strong>Select Scanned Asset:</strong> Click the dropzone to upload your photo or signature image.</li>
+      <li><strong>Select Preset:</strong> Choose either Photo (under 50 KB) or Signature (under 30 KB).</li>
+      <li><strong>Download File:</strong> Review the size and resolution in the preview, then click <em>Download UPSSSC Compliant File</em>.</li>
     </ol>
 
     <div class="faq-box">
-      <h3>Frequently Asked Questions (UPPSC OTR System)</h3>
+      <h3>Frequently Asked Questions (UPSSSC Application Portal)</h3>
       <div class="faq-item">
-        <div class="faq-q">Q1: Can I upload a signature exceeding 20 KB on the UPPSC portal?</div>
-        <div class="faq-a">No. The UPPSC upload server strictly rejects signature files that are larger than 20.0 KB or smaller than 10.0 KB.</div>
+        <div class="faq-q">Q1: What is the maximum file size for UPSSSC PET forms?</div>
+        <div class="faq-a">For UPSSSC PET registration, candidate photographs must not exceed 50 KB and signature files must not exceed 30 KB in JPG/JPEG format.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Q2: Does UPPSC allow combined photo and signature format?</div>
-        <div class="faq-a">While older notification formats sometimes used combined cards, the modern UPPSC OTR portal requires separate uploads for photo (20-50 KB) and signature (10-20 KB).</div>
+        <div class="faq-q">Q2: Can I upload a signature written in capital block letters?</div>
+        <div class="faq-a">No. UPSSSC rules strictly state that signatures done entirely in block capital letters will result in the immediate cancellation of the application.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Q3: What should I do if my photo size is 18 KB?</div>
-        <div class="faq-a">UPPSC requires candidate photos to be at least 20 KB. Our resizing engine ensures the final image stays safely within the 20 KB to 50 KB bracket.</div>
+        <div class="faq-q">Q3: Are photos with colored backgrounds accepted?</div>
+        <div class="faq-a">No. The background should be clean white or plain light grey for optimal scanning and admit card generation.</div>
       </div>
     </div>
   </section>
@@ -265,11 +265,11 @@ a { text-decoration: none; color: inherit; }
 let currentFile = null;
 let processedBlob = null;
 
-function syncUppscPreset() {
+function syncUpssscPreset() {
   const p = document.getElementById('presetDimension').value;
-  if (p === 'uppsc_sign') {
-    setTargetSize(20, document.querySelectorAll('.preset-btn')[0]);
-  } else if (p === 'uppsc_photo') {
+  if (p === 'upsssc_sign') {
+    setTargetSize(30, document.querySelectorAll('.preset-btn')[0]);
+  } else if (p === 'upsssc_photo') {
     setTargetSize(50, document.querySelectorAll('.preset-btn')[1]);
   } else {
     processImage();
@@ -305,9 +305,9 @@ function canvasToBlobPromise(canvas, quality) {
 async function processImage() {
   if (!currentFile) return;
 
-  const targetKb = Math.max(10, parseFloat(document.getElementById('targetKbInput').value) || 50);
+  const targetKb = Math.max(5, parseFloat(document.getElementById('targetKbInput').value) || 50);
   const maxAllowedBytes = targetKb * 1024 * 0.97;
-  const minAllowedBytes = targetKb * 1024 * 0.85;
+  const minAllowedBytes = targetKb * 1024 * 0.75;
   const preset = document.getElementById('presetDimension').value;
 
   const reader = new FileReader();
@@ -317,9 +317,9 @@ async function processImage() {
       let targetW = img.width;
       let targetH = img.height;
 
-      if (preset === 'uppsc_photo') {
+      if (preset === 'upsssc_photo') {
         targetW = 200; targetH = 230;
-      } else if (preset === 'uppsc_sign') {
+      } else if (preset === 'upsssc_sign') {
         targetW = 140; targetH = 60;
       }
 
@@ -408,7 +408,7 @@ function finalize(blob, w, h) {
   document.getElementById('metaComp').innerText = finalKb + ' KB';
   document.getElementById('metaRes').innerText = `${w} × ${h} px`;
   document.getElementById('previewCard').style.display = 'block';
-  document.getElementById('downloadBtn').innerText = `⚡ Download UPPSC File (${finalKb} KB)`;
+  document.getElementById('downloadBtn').innerText = `⚡ Download UPSSSC File (${finalKb} KB)`;
 }
 
 function downloadOptimizedImage() {
@@ -418,7 +418,7 @@ function downloadOptimizedImage() {
   }
   const a = document.createElement('a');
   a.href = URL.createObjectURL(processedBlob);
-  a.download = `UPPSC_Compliant_${document.getElementById('targetKbInput').value}KB.jpg`;
+  a.download = `UPSSSC_Compliant_${document.getElementById('targetKbInput').value}KB.jpg`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
